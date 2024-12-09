@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { EmbedBuilder } = require('discord.js');
+const config = require('../../config.json');
 
 //export command function
 module.exports = {
@@ -38,7 +39,7 @@ module.exports = {
         const suggestion = interaction.options.getString('suggestion');
 
         //define suggestions channel
-        const suggestionsChannel = interaction.client.channels.cache.get('1312774488714383532');
+        const suggestionsChannel = interaction.client.channels.cache.get(config.suggestionschannelid);
 
         //check if suggestions channel exists and reply to user if not
         if (!suggestionsChannel) {
